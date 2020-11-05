@@ -1,0 +1,38 @@
+
+
+{% block content %}
+
+
+
+<div class="col-md-4 float-right">
+    <div class="card my-4">
+      <h5 class="card-header">Contact Doctor</h5>
+      <div class="card-body">
+      <p class="card-text"> Feel free to chat with us, as our chats are completely encrypted and private</p>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+   {{ form.as_p }}
+
+   <label for="name" id="name">Name</label><br/>
+   <input type="text" id="name"><br/>
+   <label for="address" id="address">Address</label>
+     <input type="text" id="address"><br/>
+     <label for="phone" id="telphone">Tel.</label>
+     <input type="phone" id="telephone"><br/><br/>
+     <textarea width="200px" height="150px">
+
+       </textarea><br/><br/>
+
+   <input type="file" name="image" id="image">
+   <br/><br/>
+
+   <button type="submit" style="background-color: yellow; ">Upload</button>
+</form>
+
+{% if img_obj %}
+  <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+  <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+{% endif %}
+</div>
+</div>
+</div>

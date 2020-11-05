@@ -1,0 +1,7 @@
+*.pyc
+*~
+__pychache__
+blog_env
+db.postgresql
+/static
+.DS_Store
